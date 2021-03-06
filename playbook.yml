@@ -1,0 +1,12 @@
+---
+  hosts:all
+  gather_facts: true 
+
+  tasks:
+
+  - name: create cron entry 
+    ansible.builtin.cron:
+    name: "php cron"
+    minute:  "*"
+    hour: "*"
+    job: "php /var/www/html/artisan schedule:run >> /dev/null 2>&1"
