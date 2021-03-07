@@ -1,0 +1,25 @@
+- hosts: database
+  gather_facts: true
+  tasks:
+
+  - name: install prequisites
+    pip:
+      name:
+        - PyMySQL
+        - MySQLdb 
+  - name: confirm sqldump binaries 
+    apt:
+     pkg:
+      - mysqldump
+  - name: backup db
+    mysql_db:
+      state: dump
+      name: all
+      target: /tmp//tmp/backup.sql
+      force: yes
+
+  - name: copy sql backup to local machine 
+    fetch:
+      src: /tmp//tmp/backup.sql
+      dest: ./
+    
