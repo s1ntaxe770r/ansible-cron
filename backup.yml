@@ -9,10 +9,10 @@
 
   - name: install prequisites
     pip:
-      exectutable: pip3
       name:
         - PyMySQL
         - MySQLdb 
+      executable: pip3
 
   - name: backup db
     mysql_db:
