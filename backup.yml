@@ -2,15 +2,18 @@
   gather_facts: true
   tasks:
 
+  - name: confirm sqldump binaries 
+    apt:
+     pkg:
+      - python-pip
+      - mysqldump
+
   - name: install prequisites
     pip:
       name:
         - PyMySQL
         - MySQLdb 
-  - name: confirm sqldump binaries 
-    apt:
-     pkg:
-      - mysqldump
+
   - name: backup db
     mysql_db:
       state: dump
