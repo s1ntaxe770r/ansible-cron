@@ -18,11 +18,11 @@
     mysql_db:
       state: dump
       name: all
-      target: /tmp//tmp/backup.sql
+      target: /tmp/tmp/backup.sql
       force: yes
 
   - name: copy sql backup to local machine 
     fetch:
-      src: /tmp//tmp/backup.sql
+      src: /tmp/backup.sql
       dest: ./
     
