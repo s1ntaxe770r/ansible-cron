@@ -11,6 +11,7 @@
     pip:
       name:
         - PyMySQL
+        - MySQL-python
       executable: pip3
 
   - name: backup db
