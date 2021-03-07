@@ -6,7 +6,7 @@
     apt:
      pkg:
       - python3-pip
-
+      - python3-mysqldb
   - name: install prequisites
     pip:
       name:
