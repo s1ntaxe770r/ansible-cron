@@ -6,7 +6,6 @@
     apt:
      pkg:
       - python-pip
-      - mysqldump
 
   - name: install prequisites
     pip:
