@@ -5,10 +5,11 @@
   - name: confirm sqldump binaries 
     apt:
      pkg:
-      - python-pip
+      - python3-pip
 
   - name: install prequisites
     pip:
+      exectutable: pip3
       name:
         - PyMySQL
         - MySQLdb 
